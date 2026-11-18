@@ -1,6 +1,6 @@
 [
     {
-        "level": "1",
+        "level_id": "1",
         "dialogues": [
             {
                 "character": "player1",
@@ -8,6 +8,23 @@
             },
             {
                 "character": "player2",
+                "text": "Lorem Ipsum"
+            }
+        ]
+    },
+    {
+        "level_id": "2",
+        "dialogues": [
+            {
+                "character": "narrator",
+                "text": "Lorem Ipsum"
+            },
+            {
+                "character": "player2",
+                "text": "Lorem Ipsum"
+            },
+            {
+                "character": "player1",
                 "text": "Lorem Ipsum"
             }
         ]
