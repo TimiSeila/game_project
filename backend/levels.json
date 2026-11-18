@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "width": 40,
+        "height": 20,
+        "elements": [
+            {
+                "type": "floor",
+                "location": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 14,
+                    "y": 41
+                }
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "width": 40,
+        "height": 20,
+        "elements": [
+            {
+                "type": "spike",
+                "location": {
+                    "x": 12,
+                    "y": 16
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 1,
+                    "y": 1
+                }
+            }
+        ]
+    }
+]

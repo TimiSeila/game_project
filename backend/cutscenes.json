@@ -1,0 +1,11 @@
+[
+    {
+        "id": "beginning",
+        "shots": [
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            }
+        ]
+    }
+]

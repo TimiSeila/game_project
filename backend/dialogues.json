@@ -1,0 +1,15 @@
+[
+    {
+        "level": "1",
+        "dialogues": [
+            {
+                "character": "player1",
+                "text": "Lorem Ipsum"
+            },
+            {
+                "character": "player2",
+                "text": "Lorem Ipsum"
+            }
+        ]
+    }
+]
