@@ -1,0 +1,32 @@
+[
+    {
+        "cutscene_id": "1",
+        "shots": [
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            },
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            }
+        ]
+    },
+    {
+        "cutscene_id": "2",
+        "shots": [
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            },
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            },
+            {
+                "text": "Lorem Ipsum",
+                "image": "/image_path.png"
+            }
+        ]
+    }
+]
