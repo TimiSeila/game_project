@@ -13,19 +13,20 @@
 }
 
 .menu-button {
-    padding: 8px;
-    border-radius: 16px;
+    padding: 12px 18px;
+    border-radius: 18px;
     width: 100%;
     transition-duration: 0.3s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .menu-button a {
     text-decoration: none;
     color: white;
+    font-size: 1.2rem;
     transition-duration: 0.3s;
 }
 
@@ -33,7 +34,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .menu-button:hover {
@@ -69,8 +70,52 @@
 }
 
 .menu-button:hover .triangle-left,
-.menu-button:hover .triangle-right {
-    opacity: 1; 
+.menu-button:hover .triangle-right,
+.menu-button.selected .triangle-left,
+.menu-button.selected .triangle-right {
+    opacity: 1;
+}
+
+.credits-menu {
+    gap: 32px;
+}
+
+.credits-heading {
+    color: #f2f2f2;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-indent: 0.35em;
+    text-transform: uppercase;
+}
+
+.credits-list {
+    width: min(420px, 85vw);
+    gap: 8px;
+}
+
+.credits-separator {
+    height: 1px;
+    margin: 8px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+.credit-role {
+    color: #cfcfcf;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.credit-entry:hover {
+    cursor: default;
+    transform: none;
+}
+
+.credit-entry:hover a {
+    font-weight: 400;
 }
 
 body {
