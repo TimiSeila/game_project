@@ -6,6 +6,9 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    justify-content: center;
 }
 
 .menu-button {
@@ -34,5 +37,6 @@
 
 body {
     background-color: black;
+    height: 100vh;
 }
 
