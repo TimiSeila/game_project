@@ -7,6 +7,6 @@
 
 **xTofuub**: Frontend ; Working together with Gabriel on the Frontend (Main menu, CSS)
 
-**Saint**: Client-Side JS ; Work on the client-side tick server, Implements API usage
+**Saint**: Client-Side JS ; ~~Work on the client-side tick server~~, Implements API usage
 
-**Roope**: Nothing yet.
+**Roope**: Map design with Cavas
