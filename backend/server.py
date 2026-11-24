@@ -1,7 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+
+CORS(app, resources={
+    r"/*": {"origins": "*"}
+})
 
 def read_level(level_id):
     with open("levels.json", "r") as file:
