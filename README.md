@@ -10,3 +10,12 @@
 **Saint**: Client-Side JS ; ~~Work on the client-side tick server~~, Implements API usage
 
 **Roope**: Map design with Cavas
+
+
+--- 
+# Game Design
+
+The game is a 2D platformer game. Game is played by 2 players, which in turns control the same character with the WASD & Arrow keys correspondingly. Only one player may move the character at a time, which will be decided in intervals. 
+
+# Logic design
+

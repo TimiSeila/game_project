@@ -17,14 +17,31 @@ var myGameArea = {
         window.addEventListener('keydown', function (e) {
             myGameArea.keys = (myGameArea.keys || []);
             myGameArea.keys[e.keyCode] = (e.type == "keydown");
+            if (e.keyCode === 87) {
+                if (!myGameArea.wIsDown) {
+                    myGameArea.wJustPressed = true;
+                    myGameArea.wIsDown = true;
+                }
+            } else {
+                myGameArea.keys[e.keyCode] = true;
+            }
         })
         window.addEventListener('keyup', function (e) {
-            myGameArea.keys[e.keyCode] = (e.type == "keydown");            
+            myGameArea.keys[e.keyCode] = (e.type == "keydown");
+            if (e.keyCode === 87) {
+                myGameArea.wIsDown = false;
+            } else {
+                myGameArea.keys[e.keyCode] = false;            
+            }     
         })
     }, 
     clear : function(){
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
+}
+
+function increaseGrav(){
+    this.gravitySpeed += this.gravity;
 }
 
 function component(width, height, color, x, y) {
@@ -36,7 +53,8 @@ function component(width, height, color, x, y) {
     this.gravity = 0.06;
     this.gravitySpeed = 0; 
     this.x = x;
-    this.y = y;    
+    this.y = y;
+    this.isGrounded = false;
     this.update = function() {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
@@ -48,6 +66,9 @@ function component(width, height, color, x, y) {
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
         this.hitBottom();
+        if (this.gravitySpeed > 5) {
+            this.gravitySpeed = 5;
+        }
     }
 
     this.hitBottom = function() {
@@ -55,6 +76,9 @@ function component(width, height, color, x, y) {
         if (this.y > rockbottom) {
             this.y = rockbottom;
             this.gravitySpeed = 0;
+            this.isGrounded = true;
+        } else {
+        this.isGrounded = false;
         }
 }
 }
@@ -64,7 +88,7 @@ function updateGameArea() {
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;    
     if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -1; }
-    //w
+    //w (wtf do u mean w)
     if (myGameArea.keys && myGameArea.keys[65]) {myGamePiece.speedX = -1; }
 
 
@@ -75,8 +99,14 @@ function updateGameArea() {
 
     if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
     //w
-    if (myGameArea.keys && myGameArea.keys[87]) {myGamePiece.speedY = -2; }
-
+   if (myGameArea.wJustPressed){
+        if (myGamePiece.isGrounded){
+            myGamePiece.gravitySpeed = -2; 
+            myGamePiece.speedY = -2;
+            myGamePiece.isGrounded = false;
+        }
+        myGameArea.wJustPressed = false;
+    }
 
 
     myGamePiece.newPos();    
