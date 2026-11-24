@@ -3,19 +3,22 @@ var myGamePiece;
 
 function startGame() {
     myGameArea.start();
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece = new component(30, 30, "black", 10, 120);
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
+        this.canvas.width = 890;
+        this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
         window.addEventListener('keydown', function (e) {
             myGameArea.keys = (myGameArea.keys || []);
+
+            // The following series of crap code just detects if the player is pressing W
+            // This is needed to limit how long the player can hold the W button
             myGameArea.keys[e.keyCode] = (e.type == "keydown");
             if (e.keyCode === 87) {
                 if (!myGameArea.wIsDown) {
@@ -40,10 +43,6 @@ var myGameArea = {
     }
 }
 
-function increaseGrav(){
-    this.gravitySpeed += this.gravity;
-}
-
 function component(width, height, color, x, y) {
     this.gamearea = myGameArea;
     this.width = width;
@@ -66,11 +65,17 @@ function component(width, height, color, x, y) {
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
         this.hitBottom();
+
+        // Gravity cap, so the player doesnt fall down instantly
         if (this.gravitySpeed > 5) {
             this.gravitySpeed = 5;
         }
     }
 
+    /* 
+    This function compares the player's location against the ground.
+    Important for the jump functionality. 
+    */
     this.hitBottom = function() {
         var rockbottom = myGameArea.canvas.height - this.height;
         if (this.y > rockbottom) {
@@ -101,7 +106,7 @@ function updateGameArea() {
     //w
    if (myGameArea.wJustPressed){
         if (myGamePiece.isGrounded){
-            myGamePiece.gravitySpeed = -2; 
+            myGamePiece.gravitySpeed = -2; // gives a smol boost to jumping
             myGamePiece.speedY = -2;
             myGamePiece.isGrounded = false;
         }
