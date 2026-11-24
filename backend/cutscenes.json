@@ -3,12 +3,20 @@
         "cutscene_id": "1",
         "shots": [
             {
-                "text": "Lorem Ipsum",
-                "image": "/image_path.png"
+                "text": "Oli synkkä syksyinen yö",
+                "image": "./images/cutscene_1/shot_1.jpg"
             },
             {
-                "text": "Lorem Ipsum",
-                "image": "/image_path.png"
+                "text": "Sitten tapahtui jotakin odottamatonta",
+                "image": "./images/cutscene_1/shot_2.jpg"
+            },
+            {
+                "text": "Kunnes hän huomasi olevansa jossakin missä joku muu ei",
+                "image": "./images/cutscene_1/shot_3.jpg"
+            },
+            {
+                "text": "Sen pituinen se",
+                "image": "./images/cutscene_1/shot_4.jpg"
             }
         ]
     },
