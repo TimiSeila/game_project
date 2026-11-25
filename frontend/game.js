@@ -4,8 +4,8 @@ class Game{
     constructor(){
         this.canvas = document.getElementById("game_canvas")
         this.ctx = this.canvas.getContext("2d")
-        this.canvas.width = window.innerWidth
-        this.canvas.height = window.innerWidth * 9 / 16
+        this.canvas.width = window.innerHeight * 16 / 9
+        this.canvas.height = window.innerHeight
         this.currentLevelIndex = 0
 
         this.levels = [
