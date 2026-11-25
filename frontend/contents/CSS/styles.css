@@ -122,3 +122,27 @@ body {
     background-color: black;
     height: 100vh;
 }
+
+.lobby-container{
+    display: flex;
+    height: 100%;
+}
+
+.player-container-light{
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-container-dark{
+    background-color: black;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
