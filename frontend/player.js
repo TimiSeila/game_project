@@ -16,6 +16,9 @@ export class Player{
         this.right = false
         this.up = false
         this.isJumping = false
+        this.interact = false
+        this.nearbyButton = null
+        this.color = controls.color ?? "white" // black or white, used for buttons and doors
 
         this.#addKeyboardListeners()
     }
@@ -31,6 +34,12 @@ export class Player{
                     break;
                 case this.controls.up:
                     this.up = true
+                    break;
+                case this.controls.interact:
+                    if (!e.repeat){
+                        this.interact = true
+                    }
+                    break;
             }
         })
 
@@ -44,21 +53,20 @@ export class Player{
                     break;
                 case this.controls.up:
                     this.up = false
+                    break;
             }
         })
     }
 
     draw(){
-        if(this.speedX < 0){
-            this.ctx.fillStyle = "blue"
-        }
-        if(this.speedX > 0){
-            this.ctx.fillStyle = "red"
-        }
-        if(this.speedX == 0){
-            this.ctx.fillStyle = "green"
-        }
+        const border = Math.max(2, this.width * 0.06)
+
+        this.ctx.fillStyle = this.color
         this.ctx.fillRect(this.x, this.y, this.width, this.height)
+
+        this.ctx.strokeStyle = this.color === "black" ? "white" : "black"
+        this.ctx.lineWidth = border
+        this.ctx.strokeRect(this.x + border / 2, this.y + border / 2, this.width - border, this.height - border)
     }
 
     updateMovement(level_elements, level_width, level_height){
@@ -67,19 +75,26 @@ export class Player{
         let blocked_top = false
         let blocked_bottom = false
 
+        const cell_width = this.canvas.width / level_width
+        const cell_height = this.canvas.height / level_height
+
         const player_left = this.x
         const player_right = this.x + this.width
         const player_top = this.y
         const player_bottom = this.y + this.height
 
         for (const element of level_elements){
-            const element_width = this.canvas.width / level_width
-            const element_height = this.canvas.height / level_height
+            if (element.type === "button"){
+                continue // buttons don't block movement
+            }
 
-            const element_left = (element.location.x - 1) * element_width
-            const element_right = (element.location.x - 1) * element_width + element_width
-            const element_top = (element.location.y - 1) * element_height
-            const element_bottom = (element.location.y - 1) * element_height + element_height
+            const element_width = cell_width
+            const element_height = cell_height * (element.type === "door" ? 2 : 1)
+
+            const element_left = (element.location.x - 1) * cell_width
+            const element_right = element_left + element_width
+            const element_top = (element.location.y - 1) * cell_height
+            const element_bottom = element_top + element_height
 
             if (
                 player_right > element_left &&
@@ -132,6 +147,44 @@ export class Player{
 
         if (this.gravityMultiplier > 12) {
             this.gravityMultiplier = 12
+        }
+
+        this.#updateNearbyButton(level_elements, cell_width, cell_height)
+    }
+
+    // finds the button under the player, only if it belongs to their color
+    #updateNearbyButton(level_elements, cell_width, cell_height){
+        this.nearbyButton = null
+
+        const player_left = this.x
+        const player_right = this.x + this.width
+        const player_top = this.y
+        const player_bottom = this.y + this.height
+        const margin_x = cell_width * 0.3
+        const margin_y = cell_height * 0.3
+
+        for (const element of level_elements){
+            if (element.type !== "button"){
+                continue
+            }
+
+            if (element.player && element.player !== this.color){
+                continue
+            }
+
+            const button_left = (element.location.x - 1) * cell_width
+            const button_top = (element.location.y - 1) * cell_height
+            const button_right = button_left + cell_width
+            const button_bottom = button_top + cell_height
+
+            if (
+                player_right > button_left - margin_x &&
+                player_left < button_right + margin_x &&
+                player_bottom > button_top - margin_y &&
+                player_top < button_bottom + margin_y
+            ){
+                this.nearbyButton = element
+            }
         }
     }
 
