@@ -231,29 +231,303 @@
             {
                 "type": "floor",
                 "location": {
-                    "x": 1,
+                    "x": 12,
+                    "y": 1
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 2
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 3
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 4
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 5
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 6
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 7
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 8
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 9
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 10
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 11
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 12
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 13
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 14
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 12,
+                    "y": 15
+                }
+            },
+            {
+                "type": "door",
+                "id": "door_1",
+                "player": "black",
+                "location": {
+                    "x": 12,
                     "y": 16
                 }
             },
             {
                 "type": "floor",
                 "location": {
-                    "x": 2,
+                    "x": 24,
+                    "y": 1
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 2
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 3
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 4
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 5
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 6
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 7
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 8
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 9
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 10
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 11
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 12
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 13
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 14
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 24,
+                    "y": 15
+                }
+            },
+            {
+                "type": "door",
+                "id": "door_2",
+                "player": "white",
+                "location": {
+                    "x": 24,
                     "y": 16
                 }
             },
             {
                 "type": "floor",
                 "location": {
-                    "x": 3,
+                    "x": 7,
                     "y": 16
                 }
             },
             {
-                "type": "spike",
+                "type": "floor",
                 "location": {
-                    "x": 4,
+                    "x": 8,
                     "y": 16
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 9,
+                    "y": 16
+                }
+            },
+            {
+                "type": "button",
+                "door_id": "door_1",
+                "player": "black",
+                "location": {
+                    "x": 8,
+                    "y": 15
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 15,
+                    "y": 16
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 16,
+                    "y": 16
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 18,
+                    "y": 14
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 19,
+                    "y": 14
+                }
+            },
+            {
+                "type": "floor",
+                "location": {
+                    "x": 20,
+                    "y": 14
+                }
+            },
+            {
+                "type": "button",
+                "door_id": "door_2",
+                "player": "white",
+                "location": {
+                    "x": 19,
+                    "y": 13
                 }
             }
         ]
